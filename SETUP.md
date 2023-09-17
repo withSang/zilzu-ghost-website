@@ -37,4 +37,11 @@ docker volume create ghost-db-data
 yarn ghost:up
 ```
 
-[localhost:8080](http://localhost:8080)으로 접속하여 블로그 설정 가능
+-> 이제 [localhost:8080](http://localhost:8080)으로 접속하여 블로그를 설정할 수 있습니다.
+
+## 테마 파일 수정 시 브라우저 자동으로 새로고침하기
+
+1. chrome 확장 [LiveReload](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei)를 설치합니다.
+2. localhost:8080에서 LiveReload 확장 프로그램을 클릭해 확장 프로그램을 활성화합니다.
+3. 이제 테마 파일("\*.hbs", "\*.css", "\*.js")를 수정하면 브라우저가 자동으로 새로고침됩니다.
+

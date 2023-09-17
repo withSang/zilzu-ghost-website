@@ -2,8 +2,9 @@ version: "3.1"
 
 services:
   ghost:
-    image: arm64v8/ghost:5.60.0-alpine
-    # image: ghost:5.62.0-alpine
+    image: ghost:5.62.0-alpine
+    # arm 환경에서는 아래 이미지를 주석 해제하고 사용하기
+    # image: arm64v8/ghost:5.60.0-alpine
     restart: always
     ports:
       - 8080:2368

@@ -1,0 +1,31 @@
+version: "3.1"
+
+services:
+  ghost:
+    image: arm64v8/ghost:5.60.0-alpine
+    # image: ghost:5.62.0-alpine
+    restart: always
+    ports:
+      - 8080:2368
+    environment:
+      # see https://ghost.org/docs/config/#configuration-options
+      database__client: mysql
+      database__connection__host: db
+      database__connection__user: root
+      database__connection__password: fjlkj3qfkldjflkds
+      database__connection__database: ghost
+      url: http://localhost:8080
+      NODE_ENV: development
+    volumes:
+      - ./:/var/lib/ghost/content/themes/edition
+  db:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: fjlkj3qfkldjflkds
+    volumes:
+      - ghost-db-data:/var/lib/mysql
+
+volumes:
+  ghost-db-data:
+    external: true
